@@ -24,7 +24,7 @@ X_test = sc_X.transform(X_test)
 
 # Support Vector Machine
 from sklearn.svm import SVC
-classifier = SVC(kernel = 'rbf', random_state = 0)       # result were best fitted with kernel = rbf( gaussian) instead of linear or poly
+classifier = SVC(kernel = 'linear', random_state = 0)       # result were best fitted with kernel = rbf( gaussian) instead of linear or poly
 classifier.fit(X_train, y_train)
 
     # Visulization
@@ -41,7 +41,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c=ListedColormap(("red", "green"))(i), label = j)
-plt.title("SVM (Training set - rbf)")
+plt.title("SVM (Training set - linear)")
 plt.xlabel("Age")
 plt.ylabel("Salary")
 plt.legend()
@@ -59,7 +59,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c=ListedColormap(("red", "green"))(i), label = j)
-plt.title("SVM (Test set -rbf)")
+plt.title("SVM (Test set -linear)")
 plt.xlabel("Age")
 plt.ylabel("Salary")
 plt.legend()
